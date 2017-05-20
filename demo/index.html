@@ -39,28 +39,26 @@
 
     <script src="../dist/image-client-resizer.min.js"></script>
     <script>
-    Object.assign(window, {
-      handleForm: function(file) {
-        var file = document.getElementById('file').files[0] || null
-        var width = parseInt(document.getElementById('width').value)
-        var height = parseInt(document.getElementById('height').value)
+    window.handleForm = function(file) {
+      var file = document.getElementById('file').files[0] || null
+      var width = parseInt(document.getElementById('width').value)
+      var height = parseInt(document.getElementById('height').value)
 
-        if (!file || !file instanceof File || !width || !height) {
-          return
-        }
-
-        new ImageResizer(file)
-          .resize(width, height)
-          .then((imageAsBase64) => {
-            var img = document.createElement('img')
-            img.src = imageAsBase64
-            document.body.appendChild(img)
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+      if (!file || !file instanceof File || !width || !height) {
+        return
       }
-    })
+
+      new ImageResizer(file)
+        .resize(width, height)
+        .then((imageAsBase64) => {
+          var img = document.createElement('img')
+          img.src = imageAsBase64
+          document.body.appendChild(img)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
     </script>
   </body>
 </html>
