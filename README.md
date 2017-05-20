@@ -13,7 +13,7 @@ A very basic library to resize image on the client side using JS
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ImageClientResizer Demo</title>
 
-    <!-- Bootstrap CDN -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +46,7 @@ A very basic library to resize image on the client side using JS
 
     <script src="../dist/image-client-resizer.min.js"></script>
     <script>
-    window.handleForm: function(file) {
+    window.handleForm = function(file) {
       var file = document.getElementById('file').files[0] || null
       var width = parseInt(document.getElementById('width').value)
       var height = parseInt(document.getElementById('height').value)
@@ -55,7 +55,7 @@ A very basic library to resize image on the client side using JS
         return
       }
 
-      new ImageResizer(file)
+      new ImageClientResizer(file)
         .resize(width, height)
         .then((imageAsBase64) => {
           var img = document.createElement('img')
