@@ -1,6 +1,6 @@
 {
   "name": "image-client-resizer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A very basic library to resize image on the client side using JS",
   "main": "gulpfile.js",
   "directories": {
