@@ -1,6 +1,6 @@
 'use strict'
 
-class ImageResizer {
+class ImageClientResizer {
   static ALLOWED_TYPES = [
     'image/jpeg',
     'image/png'
@@ -11,7 +11,7 @@ class ImageResizer {
   }
 
   isValid() : boolean {
-    return ImageResizer.ALLOWED_TYPES.includes(this.file.type)
+    return ImageClientResizer.ALLOWED_TYPES.includes(this.file.type)
   }
 
   resize(width: number, height: number) : Promise {
@@ -21,7 +21,7 @@ class ImageResizer {
 
     return new Promise((resolve, reject) => {
       if (!this.isValid()) {
-        return reject(new Error(`File type should be one of ${ImageResizer.ALLOWED_TYPES.join(', ')}`))
+        return reject(new Error(`File type should be one of ${ImageClientResizer.ALLOWED_TYPES.join(', ')}`))
       }
 
       reader.readAsDataURL(this.file)
