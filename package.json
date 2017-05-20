@@ -4,10 +4,10 @@
   "description": "A very basic library to resize image on the client side using JS",
   "main": "gulpfile.js",
   "directories": {
-    "test": "tests"
+    "test": "jasmine-node tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node tests"
   },
   "author": "Ibán Domínguez",
   "license": "MIT",
@@ -18,6 +18,8 @@
     "babel-plugin-typecheck": "^3.9.0",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2"
+    "gulp-babel": "^6.1.2",
+    "jasmine-node": "^1.14.5",
+    "jsdom": "^10.1.0"
   }
 }
