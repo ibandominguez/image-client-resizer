@@ -47,11 +47,11 @@ describe('ImageClientResizer Test', () => {
 
     // TODO
     // find out why the resize method is not executed by jsdom
-    return
+    return done()
 
     imageClientResizer.resize(10, 10).then((base64Image) => {
       const processedFile = makeFileFromBase64(base64Image, 'processed.png')
-      
+
       expect(base64Image).toEqual(postImage)
       expect(processedFile.type).toEqual('image/png')
       expect(processedFile.size).toEqual(68)
