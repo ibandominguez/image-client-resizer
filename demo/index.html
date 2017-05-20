@@ -48,7 +48,7 @@
         return
       }
 
-      new ImageResizer(file)
+      new ImageClientResizer(file)
         .resize(width, height)
         .then((imageAsBase64) => {
           var img = document.createElement('img')
